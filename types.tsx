@@ -12,7 +12,8 @@ export type BottomTabParamList = {
   TabOne: undefined;
   TabTwo: undefined;
   Profile: undefined;
-  Swipe: undefined
+  Swipe: undefined;
+  List: undefined
 };
 
 export type TabOneParamList = {
@@ -21,4 +22,8 @@ export type TabOneParamList = {
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
+};
+
+export type SwipeParamList = {
+  SwipeScreen: undefined;
 };
