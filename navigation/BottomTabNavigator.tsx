@@ -13,6 +13,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
+import SwipeScreen from '../screens/SwipeScreen'
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, SwipeParamList } from '../types';
 
 import { Icon } from 'react-native-elements'
@@ -95,7 +96,7 @@ function SwipeNavigator() {
     <SwipeStack.Navigator>
       <SwipeStack.Screen
         name="SwipeScreen"
-        component={TabTwoScreen}
+        component={SwipeScreen}
         options={{ headerTitle: 'Swipe' }}
       />
     </SwipeStack.Navigator>
