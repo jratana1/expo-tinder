@@ -4,6 +4,7 @@
  */
 
 import { Ionicons } from '@expo/vector-icons';
+import iconSet from '@expo/vector-icons/build/Fontisto';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -13,6 +14,9 @@ import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, SwipeParamList } from '../types';
+
+import { Icon } from 'react-native-elements'
+
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -27,21 +31,21 @@ export default function BottomTabNavigator() {
         name="Profile"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="person-sharp" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon type='ionicon' name="person-sharp" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="List"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon type='ionicon' name="list" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Swipe"
         component={SwipeNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="fast-food-sharp" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon type='font-awesome-5' name="utensils" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -50,8 +54,12 @@ export default function BottomTabNavigator() {
 
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={24} style={{ marginBottom: -3 }} {...props} />;
+function TabBarIcon(props: { type: string; name: string; color: string}) {
+
+// function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string}) {
+  // return <Ionicons size={24} style={{ marginBottom: -3 }} {...props} />;
+return <Icon size={24} style={{ marginBottom: -3 }} {...props}/>
+
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
