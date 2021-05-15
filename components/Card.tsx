@@ -5,7 +5,7 @@ import Layout from '../constants/Layout'
 
 const BOTTOM_BAR_HEIGHT = 29 
 
-const Card = (props: { pic: string, title: string, caption: string }) => (
+const Card = (props: CardProps) => (
   <Tile
     imageSrc={props.pic}
     imageContainerStyle={styles.imageContainer}
@@ -40,6 +40,12 @@ const styles = StyleSheet.create({
       bottom: 10,
     },
   })
+
+  type CardProps = {
+    pic: string;
+    title: string;
+    caption:string;
+  };
 
   export default Card
   

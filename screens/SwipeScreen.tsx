@@ -59,7 +59,7 @@ useEffect(
       <Text style={styles.title}>Testing</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/SwipeScreen.tsx" />
-      {/* {restList && <Card pic={restList[0].photos[0]} title={restList[0].name} caption={restList[0].location.address1}></Card>} */}
+      {restList && <Card pic={restList[0].photos[0]} title={restList[0].name} caption={restList[0].location.address1}></Card>}
     </View>
   );
 }
