@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
+      justifyContent: 'center',
     },
     imageContainer: {
       width: Layout.window.width - 30,

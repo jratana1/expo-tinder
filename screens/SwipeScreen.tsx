@@ -9,8 +9,6 @@ import {useState, useEffect} from 'react'
 export default function SwipeScreen() {
 const [restList, setRestList] =useState<any>([])
 
-
-
 useEffect(
     () => {fetch('https://api.yelp.com/v3/graphql', {
       method: 'POST',
