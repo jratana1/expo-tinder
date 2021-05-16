@@ -7,7 +7,7 @@ const BOTTOM_BAR_HEIGHT = 29
 
 const Card = (props: CardProps) => (
   <Tile
-    imageSrc={props.pic}
+    imageSrc={{uri: props.pic}}
     imageContainerStyle={styles.imageContainer}
     activeOpacity={0.9}
     title={props.title}
