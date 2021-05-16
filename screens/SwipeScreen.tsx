@@ -57,7 +57,7 @@ useEffect(
 
   return (
     <View style={styles.container}>
-      {restList.length > 0 ? <Card pic={restList[0].photos[0]} title={restList[0].name} caption={restList[0].location.address1}></Card> : null}
+      {restList.length > 0 ? <Card pic={restList[0].photos[0]} title={restList[0].name} location={restList[0].location}></Card> : null}
     </View>
   );
 }

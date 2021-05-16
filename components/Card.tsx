@@ -1,5 +1,7 @@
 import React from 'react'
 import { Platform, StyleSheet } from 'react-native'
+import { Text, View } from '../components/Themed';
+
 import { Tile } from 'react-native-elements'
 import Layout from '../constants/Layout'
 
@@ -12,11 +14,19 @@ const Card = (props: CardProps) => (
     activeOpacity={0.9}
     title={props.title}
     titleStyle={styles.title}
-    caption={props.caption}
+    caption={
+      // props.caption
+      <View style={{backgroundColor: 'rgba(52, 52, 52, 0.0)', position: 'absolute', left: 10,
+      bottom: 10}}>
+        <Text>{props.location.address1}</Text>
+        <Text>{props.location.city}, {props.location.state} {props.location.postal_code}</Text>
+      </View>
+    }
     captionStyle={styles.caption}
     containerStyle={styles.container}
     featured
   />
+
 )
 const styles = StyleSheet.create({
     container: {
@@ -45,7 +55,7 @@ const styles = StyleSheet.create({
   type CardProps = {
     pic: string;
     title: string;
-    caption:string;
+    location: any;
   };
 
   export default Card
