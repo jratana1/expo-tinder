@@ -93,7 +93,9 @@ const SwipeStack = createStackNavigator<SwipeParamList>();
 
 function SwipeNavigator() {
   return (
-    <SwipeStack.Navigator>
+    <SwipeStack.Navigator screenOptions={{
+      headerShown: false
+    }}>
       <SwipeStack.Screen
         name="SwipeScreen"
         component={SwipeScreen}

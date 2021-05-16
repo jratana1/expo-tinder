@@ -7,9 +7,10 @@ import Layout from '../constants/Layout'
 
 const BOTTOM_BAR_HEIGHT = 29 
 
-const Card = (props: CardProps) => (
+export default function Card(props: CardProps) {
+  return (
   <Tile
-    imageSrc={{uri: props.pic}}
+    imageSrc={{uri: props.photos[0]}}
     imageContainerStyle={styles.imageContainer}
     activeOpacity={0.9}
     title={props.title}
@@ -26,8 +27,9 @@ const Card = (props: CardProps) => (
     containerStyle={styles.container}
     featured
   />
+  )
+  }
 
-)
 const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -53,10 +55,12 @@ const styles = StyleSheet.create({
   })
 
   type CardProps = {
-    pic: string;
+    photos: any;
     title: string;
     location: any;
+    key: string;
+
   };
 
-  export default Card
+  // export default Card
   

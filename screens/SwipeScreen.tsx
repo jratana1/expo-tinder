@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import Card from '../components/Card'
 import {useState, useEffect} from 'react'
+
+import Swiper from 'react-native-deck-swiper'
 
 export default function SwipeScreen() {
 const [restList, setRestList] =useState<any>([])
@@ -23,20 +24,11 @@ useEffect(
         business {
           id
           name
-          display_phone
           location {
             address1
-            address2
-            address3
             city
             state
             postal_code
-            formatted_address
-          }
-
-          categories {
-            title
-            alias
           }
           photos
         }
@@ -54,11 +46,23 @@ useEffect(
         })}
       , []
     )
+  
+
 
   return (
-    <View style={styles.container}>
-      {restList.length > 0 ? <Card pic={restList[0].photos[0]} title={restList[0].name} location={restList[0].location}></Card> : null}
-    </View>
+  <SafeAreaView style={styles.container}> 
+    { restList.length > 0 ? <Swiper 
+          cards={restList} 
+          renderCard={Card} 
+          infinite 
+          backgroundColor="white" 
+          cardHorizontalMargin={0} 
+          cardVerticalMargin={0} 
+          stackSize={2}/> : null}
+  </SafeAreaView> 
+    // <View style={styles.container}>
+    //   {restList.length > 0 ? <Card key={restList[0].id} photos={restList[0].photos} title={restList[0].name} location={restList[0].location}></Card> : null}
+    // </View>
   );
 }
 
@@ -67,14 +71,39 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+    
   },
 });
+
+// () => {fetch('https://api.yelp.com/v3/graphql', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Authorization': `Bearer w6qa8__4fH9T6fuiTpxA09hBfrKhosMvhe9N4EVtpZ6GaqJpTTasxnDkgApBCtGUGbiO9VinV1x4nU9VhVeMLepRZa1CZdHpK-o33NtvPj2LsFag44iGgPMqkx6eX3Yx`
+//   },
+//   body: JSON.stringify({
+//     query: `
+//         query GetRest{
+//   search(term: "burrito", location: "philly") {
+//     business {
+//       id
+//       name
+//       display_phone
+//       location {
+//         address1
+//         address2
+//         address3
+//         city
+//         state
+//         postal_code
+//         formatted_address
+//       }
+
+//       categories {
+//         title
+//         alias
+//       }
+//       photos
+//     }
+//   }
+// }`
