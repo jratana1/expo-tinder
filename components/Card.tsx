@@ -2,7 +2,7 @@ import React from 'react'
 import { Platform, StyleSheet } from 'react-native'
 import { Text, View } from '../components/Themed';
 
-import { Tile } from 'react-native-elements'
+import { Tile, withTheme } from 'react-native-elements'
 import Layout from '../constants/Layout'
 
 const BOTTOM_BAR_HEIGHT = 29 
@@ -13,14 +13,14 @@ export default function Card(props: CardProps) {
     imageSrc={{uri: props.photos[0]}}
     imageContainerStyle={styles.imageContainer}
     activeOpacity={0.9}
-    title={props.title}
+    title={props.name}
     titleStyle={styles.title}
     caption={
       // props.caption
       <View style={{backgroundColor: 'rgba(52, 52, 52, 0.0)', position: 'absolute', left: 10,
       bottom: 10}}>
-        <Text>{props.location.address1}</Text>
-        <Text>{props.location.city}, {props.location.state} {props.location.postal_code}</Text>
+        <Text style={styles.text}>{props.location.address1}</Text>
+        <Text style={styles.text}>{props.location.city}, {props.location.state} {props.location.postal_code}</Text>
       </View>
     }
     captionStyle={styles.caption}
@@ -52,15 +52,18 @@ const styles = StyleSheet.create({
       left: 10,
       bottom: 10,
     },
+
+    text:{
+      fontWeight: 'bold',
+      fontSize: 14,
+      color: "white"
+    }
   })
 
   type CardProps = {
     photos: any;
-    title: string;
+    name: string;
     location: any;
     key: string;
 
-  };
-
-  // export default Card
-  
+  };  

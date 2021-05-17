@@ -60,9 +60,6 @@ useEffect(
           cardVerticalMargin={0} 
           stackSize={2}/> : null}
   </SafeAreaView> 
-    // <View style={styles.container}>
-    //   {restList.length > 0 ? <Card key={restList[0].id} photos={restList[0].photos} title={restList[0].name} location={restList[0].location}></Card> : null}
-    // </View>
   );
 }
 
