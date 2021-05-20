@@ -16,7 +16,6 @@ export default function Card(props: CardProps) {
     title={props.name}
     titleStyle={styles.title}
     caption={
-      // props.caption
       <View style={{backgroundColor: 'rgba(52, 52, 52, 0.0)', position: 'absolute', left: 10,
       bottom: 10}}>
         <Text style={styles.text}>{props.location.address1}</Text>
