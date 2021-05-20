@@ -7,7 +7,9 @@ import { Ionicons } from '@expo/vector-icons';
 import iconSet from '@expo/vector-icons/build/Fontisto';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
+import *  as React from 'react';
+import {useState} from 'react'
+
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -22,6 +24,7 @@ import { Icon } from 'react-native-elements'
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
+  const[userRestArray, setUserRestArray] = useState<any>([])
   const colorScheme = useColorScheme();
 
   return (

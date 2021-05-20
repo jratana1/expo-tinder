@@ -64,7 +64,21 @@ useEffect(
     }
     , [])
   
+    const swipeRight = (index: number) => {
+      console.log(restList[index])
 
+      let config = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            // Authorization: `Bearer ${sessionStorage.token}`
+        },
+        body: JSON.stringify({restaurant: restList[index]})
+    }
+
+    fetch(BASE_URL+"/swiperight", config)
+  }
 
   return (
   <SafeAreaView style={styles.container}> 
@@ -75,7 +89,10 @@ useEffect(
           backgroundColor="white" 
           cardHorizontalMargin={0} 
           cardVerticalMargin={0} 
-          stackSize={2}/> : null}
+          stackSize={2}
+          onSwipedRight={(index) => swipeRight(index)}/>
+          : null
+          }
   </SafeAreaView> 
   );
 }

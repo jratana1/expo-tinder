@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f168b28-2682-4305-8dec-d50499b363ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/SwipeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/SwipeScreen.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,10 +98,10 @@
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="184" y="121" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.875@0.25.1440.875" timestamp="1621399550188" />
-    <state x="120" y="145" width="1200" height="635" key="AVDManager" timestamp="1621449533697">
+    <state x="120" y="145" width="1200" height="635" key="AVDManager" timestamp="1621527898720">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="120" y="145" width="1200" height="635" key="AVDManager/0.25.1440.875@0.25.1440.875" timestamp="1621449533697" />
+    <state x="120" y="145" width="1200" height="635" key="AVDManager/0.25.1440.875@0.25.1440.875" timestamp="1621527898720" />
     <state x="385" y="210" key="run.anything.popup" timestamp="1621399195461">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
