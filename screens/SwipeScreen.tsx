@@ -65,7 +65,6 @@ useEffect(
     , [])
   
     const swipeRight = (index: number) => {
-      console.log(restList[index])
 
       let config = {
         method: 'POST',
