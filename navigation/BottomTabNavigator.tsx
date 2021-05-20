@@ -3,8 +3,6 @@
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
 
-import { Ionicons } from '@expo/vector-icons';
-import iconSet from '@expo/vector-icons/build/Fontisto';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import *  as React from 'react';
@@ -14,9 +12,9 @@ import {useState} from 'react'
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import ListScreen from '../screens/ListScreen';
 import SwipeScreen from '../screens/SwipeScreen'
-import { BottomTabParamList, TabOneParamList, TabTwoParamList, SwipeParamList } from '../types';
+import { BottomTabParamList, TabOneParamList, ListParamList, SwipeParamList } from '../types';
 
 import { Icon } from 'react-native-elements'
 
@@ -40,7 +38,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="List"
-        component={TabTwoNavigator}
+        component={ListNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon type='ionicon' name="list" color={color} />,
         }}
@@ -78,17 +76,17 @@ function TabOneNavigator() {
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const ListStack = createStackNavigator<ListParamList>();
 
-function TabTwoNavigator() {
+function ListNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
+    <ListStack.Navigator>
+      <ListStack.Screen
+        name="ListScreen"
+        component={ListScreen}
         options={{ headerTitle: 'List' }}
       />
-    </TabTwoStack.Navigator>
+    </ListStack.Navigator>
   );
 }
 
