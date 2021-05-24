@@ -7,7 +7,7 @@ import {useState, useEffect} from 'react'
 
 import Swiper from 'react-native-deck-swiper'
 // import { BASE_URL } from '../App'
-const BASE_URL = "http://53524d71a458.ngrok.io";
+const BASE_URL = "http://ddbaa301cc20.ngrok.io";
 
 export default function SwipeScreen() {
 const [restList, setRestList] =useState<any>([])
