@@ -12,39 +12,8 @@ const BASE_URL = "http://53524d71a458.ngrok.io";
 export default function SwipeScreen() {
 const [restList, setRestList] =useState<any>([])
 
-useEffect(
-  // () => {fetch('https://api.yelp.com/v3/graphql', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     'Authorization': `Bearer w6qa8__4fH9T6fuiTpxA09hBfrKhosMvhe9N4EVtpZ6GaqJpTTasxnDkgApBCtGUGbiO9VinV1x4nU9VhVeMLepRZa1CZdHpK-o33NtvPj2LsFag44iGgPMqkx6eX3Yx`
-  //   },
-  //   body: JSON.stringify({
-  //     query: `
-  //         query GetRest{
-  //   search(term: "burrito", location: "philly") {
-  //     business {
-  //       id
-  //       name
-  //       location {
-  //         address1
-  //         city
-  //         state
-  //         postal_code
-  //       }
-  //       photos
-  //     }
-  //   }
-  // }`
-  
-  //   }),
-  // })
-  //   .then((res) => res.json())
-  //   .then((result) => {
-  //         setRestList(result.data.search.business)
-  //     })}
-  //     , [])
 
+useEffect(
     () => {
       let config = {
       method: 'POST',
@@ -77,7 +46,12 @@ useEffect(
     }
 
     fetch(BASE_URL+"/swiperight", config)
+    .then(res => res.json())
+    .then(res => {
+      console.log(res)
+    })
   }
+  
 
   return (
   <SafeAreaView style={styles.container}> 

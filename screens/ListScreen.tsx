@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import {useState, useEffect} from 'react'
-
+import {useItems} from '../hooks/globalState';
 import Card from '../components/Card'
 
 const BASE_URL = "http://53524d71a458.ngrok.io";
@@ -12,17 +12,17 @@ const BASE_URL = "http://53524d71a458.ngrok.io";
 
 export default function ListScreen() {
   const[userRestArray, setUserRestArray] = useState<any>([])
-
+  // const [items, setItems] = useItems();
   useEffect(
   () => {  
   fetch(BASE_URL+"/restaurants")
   .then(res => res.json())
   .then(res => {
+    // setItems(res)
     setUserRestArray(res)
-    console.log(res)
   })
   }
- )
+ ,[])
 
   const mapRestArraytoCards = () => {
     if (userRestArray && userRestArray.length) {
@@ -35,9 +35,14 @@ export default function ListScreen() {
     }
   }
   return (
+    <SafeAreaView>
+    <ScrollView>
     <View style={styles.container}>
         {mapRestArraytoCards()}
     </View>
+    </ScrollView>
+    </SafeAreaView>
+
   );
 }
 

@@ -25,4 +25,5 @@ export type ListParamList = {
 
 export type SwipeParamList = {
   SwipeScreen: undefined;
+  setArray: undefined
 };
