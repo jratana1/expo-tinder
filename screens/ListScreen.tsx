@@ -7,12 +7,13 @@ import {useState, useEffect} from 'react'
 import {useItems} from '../hooks/globalState';
 import Card from '../components/Card'
 
-const BASE_URL = "http://53524d71a458.ngrok.io";
+const BASE_URL = "http://92479108bca2.ngrok.io";
 
 
 export default function ListScreen() {
   const[userRestArray, setUserRestArray] = useState<any>([])
   // const [items, setItems] = useItems();
+  
   useEffect(
   () => {  
   fetch(BASE_URL+"/restaurants")

@@ -6,6 +6,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import *  as React from 'react';
+import { useState } from 'react';
 
 
 import Colors from '../constants/Colors';
@@ -21,6 +22,7 @@ import { Icon } from 'react-native-elements'
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
+  const[state, setState] = useState(false)
   const colorScheme = useColorScheme();
 
   return (
@@ -83,6 +85,7 @@ function ListNavigator() {
         name="ListScreen"
         component={ListScreen}
         options={{ headerTitle: 'List' }}
+        // initialParams={{ setState: setState }}
       />
     </ListStack.Navigator>
   );
