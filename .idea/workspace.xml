@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f168b28-2682-4305-8dec-d50499b363ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hooks/globalState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/BottomTabNavigator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/BottomTabNavigator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ListScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ListScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/SwipeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/SwipeScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/types.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="4f168b28-2682-4305-8dec-d50499b363ff" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

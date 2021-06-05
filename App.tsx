@@ -6,7 +6,7 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "http://cd2ed39be702.ngrok.io";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
