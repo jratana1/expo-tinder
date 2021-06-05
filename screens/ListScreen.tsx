@@ -1,29 +1,42 @@
 import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import {useState, useEffect} from 'react'
-import {useItems} from '../hooks/globalState';
+import {useState, useEffect, useCallback} from 'react'
 import Card from '../components/Card'
 
-const BASE_URL = "http://92479108bca2.ngrok.io";
+const BASE_URL = "http://cd2ed39be702.ngrok.io";
 
 
 export default function ListScreen() {
   const[userRestArray, setUserRestArray] = useState<any>([])
-  // const [items, setItems] = useItems();
-  
-  useEffect(
-  () => {  
-  fetch(BASE_URL+"/restaurants")
-  .then(res => res.json())
-  .then(res => {
-    // setItems(res)
-    setUserRestArray(res)
-  })
-  }
- ,[])
+
+
+ useFocusEffect(
+  useCallback(() => {
+    let isActive = true;
+
+    const fetchList = async () => {
+      try {
+        const res = await fetch(BASE_URL+"/restaurants")
+                          .then(res => res.json())
+
+        if (isActive) {
+          setUserRestArray(res)
+        }
+      } catch (e) {
+        // Handle error
+      }
+    };
+
+    fetchList();
+
+    return () => {
+      isActive = false;
+    };
+  }, [])
+);
 
   const mapRestArraytoCards = () => {
     if (userRestArray && userRestArray.length) {
